@@ -12,6 +12,12 @@ const markerTemplate = (data) => `
    </div>
 `;
 
+const noop = () => {};
+const report = (category = 'unknown', action = 'unknown', value) => {
+   console.info(category, action, value);
+   (window.ga || noop)('send', 'event', category, action, 'Campaign', value);
+};
+
 class App {
 
    constructor() {
@@ -46,6 +52,7 @@ class App {
       this.$infoButtons.on('click', '[data-view]', (event) => {
          event.preventDefault();
          this.changeInfobox(event.currentTarget.dataset.view);
+         report('Infobox', 'changed', event.currentTarget.innerText);
       });
 
       if ('ontouchstart' in window) {
@@ -97,7 +104,16 @@ class App {
          callback();
       }
       else {
-         this.runSVGAnimation(id, onReady, callback);
+         this.runSVGAnimation(id,
+            () => { // on Ready
+               report('Animation', 'started');
+               onReady();
+            },
+            () => { // on Finish
+               report('Animation', 'ended');
+               callback();
+            }
+         );
       }
    }
 
@@ -107,6 +123,7 @@ class App {
    }
 
    beforeSubmit() {
+      report('Donation', 'submitted', this.amount);
       const counts = {};
       this.items.forEach((item) => {
          counts[item.earmark] = (counts[item.earmark] || 0) + item.price;
@@ -126,6 +143,7 @@ class App {
 
    handleAmountChange() {
       this.amount = +this.$amount.val();
+      report('Donation', 'changed', this.amount);
       this.renderItems();
    }
 
@@ -133,12 +151,14 @@ class App {
       const name = currentTarget.innerText;
       const price = +currentTarget.dataset.price;
       const earmark = currentTarget.parentElement.dataset.earmark;
+      report('Donation', 'added', `${name}: ${price}`);
       this.addProduct({ name, price, earmark });
    }
 
    handleRemoval({ currentTarget = {} }) {
       const name = currentTarget.innerText;
       const price = +currentTarget.dataset.price;
+      report('Donation', 'removed', `${name}: ${price}`);
       this.removeProduct({ name, price });
    }
 

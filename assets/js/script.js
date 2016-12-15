@@ -1,6 +1,6 @@
 'use strict';
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -12,6 +12,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var markerTemplate = function markerTemplate(data) {
    return '\n   <div class="pin" id="' + (data.id || '') + '" style="left: ' + data.left + '; top: ' + data.top + ';">\n      <div class="glow"></div>\n      <div class="circle"></div>\n      <div class="more">\n         <div class="content" data-earmark="' + data.earmark + '">\n            ' + data.content + '\n         </div>\n      </div>\n   </div>\n';
+};
+
+var noop = function noop() {};
+var report = function report() {
+   var category = arguments.length <= 0 || arguments[0] === undefined ? 'unknown' : arguments[0];
+   var action = arguments.length <= 1 || arguments[1] === undefined ? 'unknown' : arguments[1];
+   var value = arguments[2];
+
+   console.info(category, action, value);
+   (window.ga || noop)('send', 'event', category, action, 'Campaign', value);
 };
 
 var App = function () {
@@ -53,6 +63,7 @@ var App = function () {
          this.$infoButtons.on('click', '[data-view]', function (event) {
             event.preventDefault();
             _this.changeInfobox(event.currentTarget.dataset.view);
+            report('Infobox', 'changed', event.currentTarget.innerText);
          });
 
          if ('ontouchstart' in window) {
@@ -114,7 +125,15 @@ var App = function () {
             onReady();
             callback();
          } else {
-            this.runSVGAnimation(id, onReady, callback);
+            this.runSVGAnimation(id, function () {
+               // on Ready
+               report('Animation', 'started');
+               onReady();
+            }, function () {
+               // on Finish
+               report('Animation', 'ended');
+               callback();
+            });
          }
       }
    }, {
@@ -126,6 +145,7 @@ var App = function () {
    }, {
       key: 'beforeSubmit',
       value: function beforeSubmit() {
+         report('Donation', 'submitted', this.amount);
          var counts = {};
          this.items.forEach(function (item) {
             counts[item.earmark] = (counts[item.earmark] || 0) + item.price;
@@ -144,6 +164,7 @@ var App = function () {
       key: 'handleAmountChange',
       value: function handleAmountChange() {
          this.amount = +this.$amount.val();
+         report('Donation', 'changed', this.amount);
          this.renderItems();
       }
    }, {
@@ -155,6 +176,7 @@ var App = function () {
          var name = currentTarget.innerText;
          var price = +currentTarget.dataset.price;
          var earmark = currentTarget.parentElement.dataset.earmark;
+         report('Donation', 'added', name + ': ' + price);
          this.addProduct({ name: name, price: price, earmark: earmark });
       }
    }, {
@@ -165,6 +187,7 @@ var App = function () {
 
          var name = currentTarget.innerText;
          var price = +currentTarget.dataset.price;
+         report('Donation', 'removed', name + ': ' + price);
          this.removeProduct({ name: name, price: price });
       }
    }, {
@@ -209,7 +232,7 @@ var App = function () {
          if (items.length && actualValue < targetValue) {
             var _ret = function () {
                var partlyOff = function partlyOff(item) {
-                  return '<div class="item"><span class="name">' + item.name + '</span>\n                                       <div class="price">' + item.newPrice + '&nbsp;€\n                                          <span class="strike">' + item.price + '&nbsp;€</span>\n                                       </div>\n                                    </div>';
+                  return '<div class="item"><span class="name">' + item.name + '</span>\n                                       <div class="price">' + item.newPrice + '&nbsp;\u20AC\n                                          <span class="strike">' + item.price + '&nbsp;\u20AC</span>\n                                       </div>\n                                    </div>';
                };
                var fullyOff = function fullyOff(item) {
                   return '<div class="item strike">\n                                        <span class="name">' + item.name + '</span>\n                                        <span data-price="' + item.price + '"></span>\n                                     </div>';
