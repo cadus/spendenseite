@@ -1,8 +1,7 @@
 ## Links
 
 - Kampange: [betterplace.org/de/organisations/20399-cadus-phoenix-redefine-global-solidarity-e-v](https://www.betterplace.org/de/organisations/20399-cadus-phoenix-redefine-global-solidarity-e-v)
-- Übergangs-Spendenseite: [cadus.org/mobileHospital](http://www.cadus.org/mobileHospital)
-- designierte Domain: [mobile-hospital.org](http://mobile-hospital.org/)
+- Domain: [mobile-hospital.org](http://mobile-hospital.org/)
 - Github: [cadus.github.io/spendenseite](http://cadus.github.io/spendenseite/)
 
 
