@@ -10,6 +10,24 @@
 @import "item";
 @import "more";
 
+// New Cadus Styles -----------------------------
+
+.level_1 > li .level_2 {display: none;}
+.level_1 > li:hover .level_2 {
+   display: block;
+   position: absolute;
+   background-color: white;
+   margin-left: 5px;
+   padding-left: 0;
+}
+.level_1 .level_2 > li  {
+   padding:10px;
+   margin:0;
+}
+.level_1 .level_2 > li a, .level_1 .level_2 > li span {
+   padding:0px;
+   margin-left: 0;
+}
 
 // Styles ---------------------------------------
 
