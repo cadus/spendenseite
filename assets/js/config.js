@@ -16,7 +16,7 @@ window.config = {
                 <div class="item" data-price="1275"><span class="name">CTG (Cardiotokograph)</span></div>\
                 <div class="item" data-price="1335"><span class="name">Absaugeinheiten</span></div>\
                 <div class="item" data-price="2000"><span class="name">Anaesthisia Infusions Pumps</span></div>\
-                <div class="item" data-price="20.000"><span class="name">Anaesthesia units</span></div>\
+                <div class="item" data-price="20000"><span class="name">Anaesthesia units</span></div>\
                 <div class="item" data-price="2500"><span class="name">Autoklav für Instrumente und OP-Bekleidung</span></div>',
    }, {
       left: '8%',
@@ -26,7 +26,7 @@ window.config = {
                 <div class="item" data-price="12"><span class="name">Abnabelungsset, 10 Stück</span></div>\
                 <div class="item" data-price="5000"><span class="name">AED (besser richtiger Defi wie LP12, LP15, Corpuls C3)</span></div>\
                 <div class="item" data-price="6"><span class="name">Bluttransfusionsbeutel, 450 ml, 150 Stück</span></div>\
-                <div class="item" data-price="14.000"><span class="name">C-Bogen</span></div>\
+                <div class="item" data-price="14000"><span class="name">C-Bogen</span></div>\
                 <div class="item" data-price="50"><span class="name">Spritzen, 2, 5, 10ml, jeweils 500</span></div>\
                 <div class="item" data-price="50"><span class="name">Spritzen, 20 ml, 50 Stück</span></div>',
    }, {
