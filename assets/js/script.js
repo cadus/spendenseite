@@ -18,10 +18,10 @@ var noop = function noop() {};
 var report = function report() {
    var category = arguments.length <= 0 || arguments[0] === undefined ? 'unknown' : arguments[0];
    var action = arguments.length <= 1 || arguments[1] === undefined ? 'unknown' : arguments[1];
-   var value = arguments[2];
+   var label = arguments[2];
+   var value = arguments[3];
 
-   console.info(category, action, value);
-   (window.ga || noop)('send', 'event', category, action, 'Campaign', value);
+   (window.ga || noop)('send', 'event', category, action, label, value);
 };
 
 var App = function () {
@@ -63,7 +63,7 @@ var App = function () {
          this.$infoButtons.on('click', '[data-view]', function (event) {
             event.preventDefault();
             _this.changeInfobox(event.currentTarget.dataset.view);
-            report('Infobox', 'changed', event.currentTarget.innerText);
+            report('Infobox', 'changed', 'Seite "' + event.currentTarget.innerText + '"');
          });
 
          if ('ontouchstart' in window) {
@@ -145,7 +145,7 @@ var App = function () {
    }, {
       key: 'beforeSubmit',
       value: function beforeSubmit() {
-         report('Donation', 'submitted', this.amount);
+         report('Donation', 'submitted', 'amount', this.amount);
          var counts = {};
          this.items.forEach(function (item) {
             counts[item.earmark] = (counts[item.earmark] || 0) + item.price;
@@ -164,7 +164,7 @@ var App = function () {
       key: 'handleAmountChange',
       value: function handleAmountChange() {
          this.amount = +this.$amount.val();
-         report('Donation', 'changed', this.amount);
+         report('Donation', 'changed', 'amount', this.amount);
          this.renderItems();
       }
    }, {
@@ -176,7 +176,7 @@ var App = function () {
          var name = currentTarget.innerText;
          var price = +currentTarget.dataset.price;
          var earmark = currentTarget.parentElement.dataset.earmark;
-         report('Donation', 'added', name + ': ' + price);
+         report('Donation', 'added', name, price);
          this.addProduct({ name: name, price: price, earmark: earmark });
       }
    }, {
@@ -187,7 +187,7 @@ var App = function () {
 
          var name = currentTarget.innerText;
          var price = +currentTarget.dataset.price;
-         report('Donation', 'removed', name + ': ' + price);
+         report('Donation', 'removed', name, price);
          this.removeProduct({ name: name, price: price });
       }
    }, {
