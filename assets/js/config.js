@@ -13,101 +13,42 @@ window.config = {
       top: '31%',
       earmark: '147181',
       content: '<p>Ein oder mehrere Bauteile auswählen:</p>\
-                <div class="item" data-price="140"><span class="name">Batterie</span></div>\
-                <div class="item" data-price="290"><span class="name">Anlasser</span></div>\
-                <div class="item" data-price="220"><span class="name">Lichtmaschine</span></div>\
-                <div class="item" data-price="30"><span class="name">Lichtmaschinen&shy;regler</span></div>',
-   }, {
-      left: '60%',
-      top: '64.5%',
-      earmark: '147172',
-      content: '<p>Ein oder mehrere Bauteile auswählen:</p>\
-                <div class="item" data-price="2800"><span class="name">Motor (Austausch)</span></div>\
-                <div class="item" data-price="1500"><span class="name">Getriebe (Austausch)</span></div>\
-                <div class="item" data-price="450"><span class="name">Nockenwelle</span></div>\
-                <div class="item" data-price="300"><span class="name">Ansaugkrümmer</span></div>\
-                <div class="item" data-price="500"><span class="name">Ölwanne</span></div>\
-                <div class="item" data-price="39"><span class="name">Ölwannendichtung</span></div>\
-                <div class="item" data-price="1100"><span class="name">Einspritzpumpe</span></div>\
-                <div class="item" data-price="450"><span class="name">Hydraulikpumpe</span></div>\
-                <div class="item" data-price="350"><span class="name">Hydaulikpumpenantrieb</span></div>\
-                <div class="item" data-price="29"><span class="name">Kupplungsnehmerzylinder</span></div>\
-                <div class="item" data-price="250"><span class="name">Kupplungsscheibe</span></div>\
-                <div class="item" data-price="250"><span class="name">Kupplungsdruckplatte</span></div>',
-   }, {
-      left: '60%',
-      top: '64.5%',
-      earmark: '147180',
-      content: '<p>Ein oder mehrere Bauteile auswählen:</p>\
-                <div class="item" data-price="700"><span class="name">Lenkgetriebe</span></div>\
-                <div class="item" data-price="590"><span class="name">Lenkschubstange</span></div>\
-                <div class="item" data-price="220"><span class="name">Spurstange</span></div>\
-                <div class="item" data-price="15"><span class="name">Ölfilter</span></div>\
-                <div class="item" data-price="110"><span class="name">Luftfilter</span></div>\
-                <div class="item" data-price="39"><span class="name">Kraftstoffilter</span></div>\
-                <div class="item" data-price="390"><span class="name">Auspuffkrümmer</span></div>\
-                <div class="item" data-price="90"><span class="name">Schalldämpfer</span></div>',
+                <div class="item" data-price="1275"><span class="name">CTG (Cardiotokograph)</span></div>\
+                <div class="item" data-price="1335"><span class="name">Absaugeinheiten</span></div>\
+                <div class="item" data-price="2000"><span class="name">Anaesthisia Infusions Pumps</span></div>\
+                <div class="item" data-price="20.000"><span class="name">Anaesthesia units</span></div>\
+                <div class="item" data-price="2500"><span class="name">Autoklav für Instrumente und OP-Bekleidung</span></div>',
    }, {
       left: '8%',
-      top: '57%',
+      top: '44%',
       earmark: '147182',
       content: '<p>Ein oder mehrere Bauteile auswählen:</p>\
-                <div class="item" data-price="950"><span class="name">Achse vorn</span></div>\
-                <div class="item" data-price="750"><span class="name">Tragring für Allrad Vorderachse</span></div>\
-                <div class="item" data-price="450"><span class="name">Achse hinten</span></div>\
-                <div class="item" data-price="350"><span class="name">Räder</span></div>\
-                <div class="item" data-price="55"><span class="name">Radbremszylinder</span></div>\
-                <div class="item" data-price="240"><span class="name">Bremstrommel</span></div>\
-                <div class="item" data-price="500"><span class="name">Bremskraft&shy;verstärker</span></div>\
-                <div class="item" data-price="65"><span class="name">Druckrelais Bremsventil</span></div>\
-                <div class="item" data-price="110"><span class="name">Bremsbeläge</span></div>\
-                <div class="item" data-price="300"><span class="name">Bremsleitungen Stahlflex (Satz)</span></div>\
-                <div class="item" data-price="190"><span class="name">Anhängerbrems&shy;ventil</span></div>',
+                <div class="item" data-price="12"><span class="name">Abnabelungsset, 10 Stück</span></div>\
+                <div class="item" data-price="5000"><span class="name">AED (besser richtiger Defi wie LP12, LP15, Corpuls C3)</span></div>\
+                <div class="item" data-price="6"><span class="name">Bluttransfusionsbeutel, 450 ml, 150 Stück</span></div>\
+                <div class="item" data-price="14.000"><span class="name">C-Bogen</span></div>\
+                <div class="item" data-price="50"><span class="name">Spritzen, 2, 5, 10ml, jeweils 500</span></div>\
+                <div class="item" data-price="50"><span class="name">Spritzen, 20 ml, 50 Stück</span></div>',
    }, {
       left: '26.6%',
       top: '44%',
       earmark: '147183',
       content: '<p>Ein oder mehrere Bauteile auswählen:</p>\
-                <div class="item" data-price="200"><span class="name">Tür</span></div>\
-                <div class="item" data-price="62"><span class="name">Türdichtungen</span></div>\
-                <div class="item" data-price="47"><span class="name">Türgriff mit Schließzylinder</span></div>\
-                <div class="item" data-price="30"><span class="name">Türgriff ohne Schließzylinder</span></div>\
-                <div class="item" data-price="135"><span class="name">Fensterheber</span></div>\
-                <div class="item" data-price="20"><span class="name">Fensterkurbel</span></div>\
-                <div class="item" data-price="25"><span class="name">Ausstellmechanik Drehfenster</span></div>\
-                <div class="item" data-price="69"><span class="name">Sicherheitsgurt</span></div>\
-                <div class="item" data-price="150"><span class="name">Scheibenwischer&shy;motor</span></div>\
-                <div class="item" data-price="25"><span class="name">Scheibenwischer&shy;gestänge</span></div>\
-                <div class="item" data-price="12"><span class="name">Scheibenwischer&shy;arm</span></div>\
-                <div class="item" data-price="30"><span class="name">Scheibenwischer&shy;blatt</span></div>\
-                <div class="item" data-price="25"><span class="name">Sonnenblende</span></div>\
-                <div class="item" data-price="24"><span class="name">Spiegel</span></div>',
-   }, {
-      left: '8%',
-      top: '57%',
-      earmark: '147184',
-      content: '<p>Ein oder mehrere Bauteile auswählen:</p>\
-                <div class="item" data-price="110"><span class="name">Scheinwerfer</span></div>\
-                <div class="item" data-price="50"><span class="name">Nebelscheinwerfer</span></div>\
-                <div class="item" data-price="35"><span class="name">Rücklicht</span></div>\
-                <div class="item" data-price="15"><span class="name">Blinker vorn</span></div>\
-                <div class="item" data-price="15"><span class="name">Blinker hinten</span></div>\
-                <div class="item" data-price="10"><span class="name">Kennzeichen&shy;beleuchtung</span></div>\
-                <div class="item" data-price="80"><span class="name">Signalhorn</span></div>\
-                <div class="item" data-price="250"><span class="name">Stoßstange vorn</span></div>\
-                <div class="item" data-price="120"><span class="name">Stoßstange hinten</span></div>',
-   }, {
-      left: '18.3%',
-      top: '24%',
-      earmark: '147185',
-      content: '<p>Ein oder mehrere Bauteile auswählen:</p>\
-                <div class="item" data-price="200"><span class="name">Ausbau Doppelkabine</span></div>',
+                <div class="item" data-price="50"><span class="name">Beatmungsbeutel, 500 und 1600 ml, Mehrweg, </span></div>\
+                <div class="item" data-price="250"><span class="name">Electric Heater für Neugeborene</span></div>\
+                <div class="item" data-price="20"><span class="name">Handbeatmungsbeutel</span></div>\
+                <div class="item" data-price="400"><span class="name">Infusionssysteme, 400 Stück</span></div>\
+                <div class="item" data-price="80"><span class="name">Pulsoxymeter</span></div>',
    }, {
       left: '83.2%',
       top: '19%',
       earmark: '147186',
       content: '<p>Ein oder mehrere Bauteile auswählen:</p>\
-                <div class="item" data-price="200"><span class="name">Kofferumbau</span></div>',
+                <div class="item" data-price="5"><span class="name">Pupillenleuchten</span></div>\
+                <div class="item" data-price="5"><span class="name">Reflexhammer</span></div>\
+                <div class="item" data-price="1500"><span class="name">sterile OP-Handschuhe, Größen S-L, 600 Stück</span></div>\
+                <div class="item" data-price="20"><span class="name">Stethoskope, einfache Ausführung</span></div>\
+                <div class="item" data-price="200"><span class="name">Vollausgestatteter Notfallkoffer, 3 Stück</span></div>',
    }],
 
 };
